@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- HEADER -->
+        <header>
+            <h1>🌦 Weather Dashboard</h1>
+
+            <div class="top-controls">
+                <button id="toggleMode">🌙 Dark Mode</button>
+
+                <button id="unitToggle">°C / °F</button>
+            </div>
+        </header>
+
+        <!-- SEARCH -->
+        <div class="search-box">
+
+            <input type="text" id="cityInput" placeholder="Enter city name...">
+
+            <button id="searchBtn">Search</button>
+
+        </div>
+
+        <!-- LOADING -->
+        <div class="loading hidden">
+            <p>Loading weather data...</p>
+        </div>
+
+        <!-- ERROR -->
+        <div class="error hidden">
+            <p>City not found ❌</p>
+        </div>
+
+        <!-- CURRENT WEATHER -->
+        <section class="weather-card">
+
+            <div class="weather-header">
+
+                <div>
+                    <h2 id="cityName">Karachi</h2>
+                    <p id="date">Monday, May 24</p>
+                </div>
+
+                <img id="weatherIcon" src="" alt="weather icon">
+
+            </div>
+
+            <div class="temperature-section">
+
+                <h1 id="temperature">32°C</h1>
+
+                <p id="weatherCondition">
+                    Sunny
+                </p>
+
+            </div>
+
+            <div class="weather-details">
+
+                <div class="detail-card">
+                    <h3>💧 Humidity</h3>
+                    <p id="humidity">65%</p>
+                </div>
+
+                <div class="detail-card">
+                    <h3>🌬 Wind Speed</h3>
+                    <p id="wind">12 km/h</p>
+                </div>
+
+                <div class="detail-card">
+                    <h3>🌡 Feels Like</h3>
+                    <p id="feelsLike">34°C</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- FORECAST -->
+        <section class="forecast-section">
+
+            <h2>5-Day Forecast</h2>
+
+            <div class="forecast-container">
+
+                <!-- Forecast Card -->
+                <div class="forecast-card">
+                    <h3>Mon</h3>
+                    <img src="" alt="">
+                    <p>31°C</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- FAVORITES -->
+        <section class="favorites-section">
+
+            <h2>⭐ Favorite Cities</h2>
+
+            <div class="favorites-container">
+
+                <button class="favorite-city">
+                    Karachi
+                </button>
+
+                <button class="favorite-city">
+                    Lahore
+                </button>
+
+            </div>
+
+        </section>
+
+    </div>
+    <script src="scriptdemo.js"></script>
+</body>
+
+</html>
