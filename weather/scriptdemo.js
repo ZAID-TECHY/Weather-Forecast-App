@@ -1,6 +1,3 @@
-// ============================
-// SELECT ELEMENTS
-// ============================
 
 let cityInput = document.querySelector("#cityInput");
 let searchBtn = document.querySelector("#searchBtn");
@@ -31,42 +28,31 @@ let error = document.querySelector(".error");
 let modeBtn = document.querySelector("#toggleMode");
 
 
-// ============================
-// API KEY
-// ============================
 
-let apiKey = "5d5f110793b04b7ca7d123202262405";
+//paste your api key from weatherapi.com
+let apiKey = "YOUR-API-KEY";
 
-
-// ============================
-// GET WEATHER FUNCTION
-// ============================
 
 async function getWeather(city) {
 
     try {
 
-        // show loading
         loading.classList.remove("hidden");
 
         error.classList.add("hidden");
 
-        // fetch api
+
         let response = await fetch(
             `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&days=5`
         );
 
-        // convert to json
+
         let data = await response.json();
 
         console.log(data);
 
-        // hide loading
-        loading.classList.add("hidden");
 
-        // ============================
-        // CURRENT WEATHER
-        // ============================
+        loading.classList.add("hidden");
 
         cityName.innerText =
             data.location.name;
@@ -99,9 +85,6 @@ async function getWeather(city) {
             data.current.feelslike_c + "°C";
 
 
-        // ============================
-        // FORECAST
-        // ============================
 
         forecastContainer.innerHTML = "";
 
@@ -149,10 +132,6 @@ async function getWeather(city) {
 }
 
 
-// ============================
-// SEARCH BUTTON
-// ============================
-
 searchBtn.addEventListener("click", () => {
 
     let city = cityInput.value.trim();
@@ -163,10 +142,6 @@ searchBtn.addEventListener("click", () => {
     }
 });
 
-
-// ============================
-// ENTER KEY SEARCH
-// ============================
 
 cityInput.addEventListener("keypress", (e) => {
 
@@ -182,16 +157,10 @@ cityInput.addEventListener("keypress", (e) => {
 });
 
 
-// ============================
-// DEFAULT CITY
-// ============================
 
 getWeather("Karachi");
 
 
-// ============================
-// DARK MODE
-// ============================
 
 let savedTheme =
     localStorage.getItem("theme");
