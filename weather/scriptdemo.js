@@ -30,7 +30,7 @@ let modeBtn = document.querySelector("#toggleMode");
 
 
 //paste your api key from weatherapi.com
-let apiKey = "YOUR-API-KEY";
+const apiKey = process.env.WEATHER_API_KEY; 
 
 
 async function getWeather(city) {
